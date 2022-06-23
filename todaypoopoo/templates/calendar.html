@@ -26,6 +26,9 @@
 
 {% block script %}
 <script>
+    var nav_calendar = document.getElementsByName('nav_calendar')
+    nav_calendar.classList.add('active')
+
     document.addEventListener('DOMContentLoaded', function () {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
