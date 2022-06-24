@@ -16,7 +16,7 @@
 <html lang='en'>
 
 <body>
-<div class="container-xxl">
+<div class="container-xxl my-2 mx-2">
     <div id='calendar'></div>
 </div>
 
@@ -26,8 +26,7 @@
 
 {% block script %}
 <script>
-    var nav_calendar = document.getElementsByName('nav_calendar')
-    nav_calendar.classList.add('active')
+    document.getElementById('nav_calendar').classList.add('active')
 
     document.addEventListener('DOMContentLoaded', function () {
         var calendarEl = document.getElementById('calendar');

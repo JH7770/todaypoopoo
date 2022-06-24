@@ -2,29 +2,36 @@
 
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
-    <h5 class="my-3 border-bottom pb-2">로그인</h5>
-    <form method="post">
-        {{ form.csrf_token }}
-        {% include "form_error.html" %}
-        <div class="mb-3">
-            <label for="username">아이디</label>
-            <input type="text" class="form-control" name="username" id="username"
-                   value="{{ form.username.data or '' }}">
-        </div>
-        <div class="mb-3">
-            <label for="password">비밀번호</label>
-            <input type="password" class="form-control" name="password" id="password"
-                   value="{{ form.password.data or '' }}">
-        </div>
-        <button type="submit" class="btn btn-primary">로그인</button>
-    </form>
-</div>
+
+    <div class="container text-center" onload="getTime()">
+        <img src="/static/img/logo.png" width="40%">
+       <p id="WhatTimeIsItNow"></p>
+        <button type="button" class="btn btn-primary">기록하기</button>
+    </div>
+    <div class="container yl text-start">
+        {{ g.user.username }}님 어제는 O번의 응가를 하셨네요.
+    </div>
 {% endblock %}
 
 {% block script %}
     <script>
         document.getElementById('nav_home').classList.add('active')
-    </script>
 
+        function getTime() {
+            var d = new Date();	// 현재 날짜와 시간
+            var hur = d.getHours();		// 시
+            var min = d.getMinutes();	//분
+            var sec = d.getSeconds();	//초
+
+            var timeBoard = document.getElementById("WhatTimeIsItNow"); // 값이 입력될 공간
+
+            var time = "현재 시간 : " + hur + "시 " + min + "분 " + sec + "초"	// 형식 지정
+
+            timeBoard.innerHTML = time;	// 출력
+
+            setTimeout(getTime, 1000);	//1000밀리초(1초) 마다 반복
+        }
+        {#document.addEventListener('load', )#}
+        document.getElementsByTagName('body').addEventListener('load', getTime())
+    </script>
 {% endblock %}

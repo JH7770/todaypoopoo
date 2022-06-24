@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<div class = "container my-3">
+    <div class="alert alert-primary" role="alert">회원가입에 성공하셨습니다.</div>
+    <a class ="text-black" href = "{{ url_for("main.index") }}">메인 페이지로 이동</a>
+</div>
+{% endblock %}
