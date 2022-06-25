@@ -19,9 +19,10 @@ def create_app():
     migrate.init_app(app, db)
 
     # blueprint
-    from .views import main_views, auth_views
+    from .views import main_views, auth_views, poopoo_views
     app.register_blueprint(main_views.bp)
     app.register_blueprint(auth_views.bp)
+    app.register_blueprint(poopoo_views.bp)
 
 
     # db

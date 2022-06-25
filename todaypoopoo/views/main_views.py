@@ -6,8 +6,8 @@ bp = Blueprint('main', __name__, url_prefix='/')
 def index():
     if g.user is None:
         return redirect(url_for('auth.login'))
-    form = UserLoginForm()
-    return render_template('main.html', form=form)
+    else:
+        return redirect(url_for('poopoo.record'))
 
 @bp.route('/calendar')
 def calendar():
