@@ -7,8 +7,5 @@ def index():
     if g.user is None:
         return redirect(url_for('auth.login'))
     else:
-        return redirect(url_for('poopoo.record'))
+        return redirect(url_for('poopoo.main'))
 
-@bp.route('/calendar')
-def calendar():
-    return render_template('calendar.html')

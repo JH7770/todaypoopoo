@@ -20,8 +20,10 @@ Jinja2==3.1.2
 jmespath==0.10.0
 Mako==1.2.0
 MarkupSafe==2.1.1
+psycopg2-binary==2.9.3
 pyasn1==0.4.8
 python-dateutil==2.8.2
+python-dotenv==0.20.0
 PyYAML==5.4.1
 rsa==4.7.2
 s3transfer==0.5.0

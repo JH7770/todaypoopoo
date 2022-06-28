@@ -6,8 +6,6 @@
 
     {% if success %}
         <!-- Button trigger modal -->
-
-
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -17,11 +15,10 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        쾌변하셨군요
+                        쾌변하셨군요!! 💩💩💩
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
@@ -29,9 +26,12 @@
 
     {% endif %}
     <div class="container text-center" onload="getTime()">
-        <p id="WhatTimeIsItNow"></p>
+
         <div class="container yl">
-            어제는 O번의 응가를 하셨네요.
+            어제는 <b>{{ poopoo_yesterday  }}</b>번의 응가를 했어요. &#128584;
+        </div>
+        <div class="container yl">
+            오늘은 <b>{{ poopoo_today  }}</b>번의 응가를 했어요.&#128541;
         </div>
         <img src="/static/img/logo.png" width="40%">
 
@@ -40,6 +40,7 @@
             <label for="userid"></label>
             <input type="hidden" class="form-control" name="userid" id="userid"
                    value="{{ g.user.userid }}">
+                 <p id="WhatTimeIsItNow"></p>
             <button type="submit" class="btn btn-primary">기록하기</button>
         </form>
 
